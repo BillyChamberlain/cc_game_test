@@ -1,3 +1,8 @@
+/*
+The player plays a game of standard blackjack. They try to get a higher value than the dealer without going over 21.
+The dealer is also trying to win. The cards are indeed randomized, so it is not a rigged game (shocking)
+When the player loses, they feel anger. Since there is an ingame currency, there are stakes to the game
+*/
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 let bankroll=1000, wager=0, lastBet=25, shoe=[], hands=[], active=0, dealer=[], state='bet', insurance=0, sound=true;
 const suits=['♠','♥','♦','♣'], ranks=['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
