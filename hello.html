@@ -1,10 +1,24 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Hello</title>
-    </head>
-    <body>
-        <h1 style = "color: pink;">Hello world</h1>
-        <p>Hi!</p>
-    </body>
-</html>
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>Monarch Blackjack</title><link rel="stylesheet" href="styles.css"/></head>
+<body>
+<div class="ambient"></div>
+<main class="table-shell">
+  <header><div class="brand"><span class="crown">♛</span><div><h1>MONARCH</h1><p>BLACKJACK SALON</p></div></div><div class="header-actions"><button class="icon-btn" id="soundBtn" aria-label="Toggle sound">♬</button><button class="rules-btn" id="rulesBtn">TABLE RULES</button></div></header>
+  <section class="felt" aria-live="polite">
+    <div class="top-rail">BLACKJACK PAYS 3 TO 2 <i></i> DEALER HITS SOFT 17 <i></i> INSURANCE PAYS 2 TO 1</div>
+    <div class="dealer-area"><div class="nameplate">DEALER</div><div id="dealerScore" class="score"></div><div id="dealerCards" class="cards dealer-cards"></div></div>
+    <div id="message" class="message">PLACE YOUR WAGER</div>
+    <div id="insurancePanel" class="insurance hidden"><span>INSURANCE?</span><button id="insureBtn">TAKE INSURANCE <small>(½ BET)</small></button><button id="noInsureBtn">NO, THANKS</button></div>
+    <div id="hands" class="hands"></div>
+    <div id="betCircle" class="bet-circle"><span>PLACE BET</span><div id="betAmount">$0</div></div>
+    <div class="bottom-rail">NO CASH VALUE • ENTERTAINMENT ONLY • 6 DECK SHOE</div>
+  </section>
+  <section class="console">
+   <div class="bank"><span>BANKROLL</span><strong id="bankroll">$1,000</strong></div>
+   <div class="chips" id="chips"><button data-chip="5" class="chip c5">5</button><button data-chip="25" class="chip c25">25</button><button data-chip="100" class="chip c100">100</button><button data-chip="500" class="chip c500">500</button></div>
+   <div class="controls" id="betControls"><button id="clearBtn" class="secondary">CLEAR</button><button id="rebetBtn" class="secondary">REBET</button><button id="dealBtn" class="primary">DEAL <kbd>↵</kbd></button></div>
+   <div class="controls hidden" id="playControls"><button id="hitBtn">HIT <kbd>H</kbd></button><button id="standBtn">STAND <kbd>S</kbd></button><button id="doubleBtn">DOUBLE <kbd>D</kbd></button><button id="splitBtn">SPLIT <kbd>P</kbd></button><button id="surrenderBtn" class="danger">SURRENDER</button></div>
+  </section>
+</main>
+<dialog id="rulesDialog"><button class="close" id="closeRules">×</button><div class="rule-crown">♛</div><h2>THE MONARCH TABLE</h2><p class="subtitle">CLASSIC LAS VEGAS-STYLE BLACKJACK</p><div class="rules-grid"><div><h3>OBJECTIVE & PAYOUTS</h3><p>Beat the dealer without exceeding 21. A natural blackjack—an Ace plus a ten-value card on the original deal—pays 3:2. Regular wins pay 1:1; ties push. Dealer blackjack beats non-blackjack hands.</p><h3>DEALER</h3><p>Dealer checks for blackjack with an Ace or ten upcard, then must draw through 16 and hit soft 17.</p></div><div><h3>PLAYER OPTIONS</h3><p><b>Hit</b> takes a card. <b>Stand</b> ends your hand. <b>Double</b> matches your wager, draws exactly one card, and is allowed on any first two cards—including after a split. <b>Split</b> separates equal-value pairs with a matching wager; resplit up to four hands.</p><h3>EXCEPTIONS</h3><p>Split Aces receive one card each; an Ace + ten after splitting is 21, not blackjack. Late surrender is available only on an unsplit first two-card hand after the dealer has checked, returning half the wager. Insurance is offered against an Ace, costs half the original bet, and pays 2:1 if dealer blackjack.</p></div></div></dialog>
+<script src="game.js"></script></body></html>
